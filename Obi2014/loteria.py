@@ -4,6 +4,14 @@
 # Saída
 # Seu programa deve imprimir uma linha contendo uma palavra: “terno”, “quadra”, “quina” ou “sena”; caso Flavinho tenha acertado, respectivamente, 3, 4, 5, ou 6 números. Caso ele tenha acertado menos do que 3 números, imprima a palavra “azar”.
 
+from enum import Enum
+
+class Results(Enum):
+  TERNO = 3
+  QUADRA = 4
+  QUINA = 5
+  SENA = 6
+
 flavinhoInputs = []
 resultNumbers = []
 
@@ -19,15 +27,15 @@ for x in flavinhoInputs:
   if x in resultNumbers:
     correctNumbers += 1
 
-print(correctNumbers)
+if correctNumbers < 3:
+  print("Azar!")
+else:
+  print(Results(correctNumbers).name)
 
 
 
-# from enum import Enum
 
-# class Color(Enum):
-#   RED = 1
-#   GREEN = 2
-#   BLUE = 3
 
-# print(Color.RED.value)
+
+
+
