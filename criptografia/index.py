@@ -11,17 +11,15 @@ for x in range(1, int(input("Insira a quantidade de textos a serem criptografado
   messages.append(input("Mensagem: "))
 
 for message in messages:
+  i = 0
   for char in message:
     if(char.isalpha()):
-      position = int((ord(char)))
-      position += 3
+      position = int((ord(char))) + 3      
       
-      i = char.index()
+      message[i] = str(chr(position))
 
-      print(f'INDEX: {i}')
+    print(message[i])
 
-
-
-
+    i += 1
 
 #chr(ord(texto[2]) + 1)
